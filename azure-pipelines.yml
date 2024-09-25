@@ -59,9 +59,8 @@ stages:
       - task: KubernetesManifest@1
         inputs:
           action: 'deploy'
-          connectionType: 'kubernetesServiceConnection'
           kubernetesServiceConnection: 'K8S_Examples_cluster-default'
           namespace: 'default'
           manifests: 
-            $(Pipeline.Workspace)/manifest/deployment.yml
-            $(Pipeline.Workspace)/manifest/service.yml
+            $(Pipeline.Workspace)/manifests/deployment.yml
+            $(Pipeline.Workspace)/manifests/service.yml
