@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: raderrickdeploytoaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raderrickdeploytoaks
+  template:
+    metadata:
+      labels:
+        app: raderrickdeploytoaks 
+    spec:
+      containers:
+        - name: raderrickdeploytoaks 
+          image: k8sexampleacr.azurecr.io/raderrickdeploytoaks
+          ports:
+          - containerPort: 80
